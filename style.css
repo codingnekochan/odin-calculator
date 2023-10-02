@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+  }
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(175, 184, 196, 0.67);
+    position:relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.4rem;
+    padding: 15px;
+}
+.calc_body,
+.calc_display,
+.calc_keypad,
+.calc_keys--digits,
+.calc_keys--extra,
+.calc_keys--operators,
+.extra_button,
+.digit_button,
+.operator_button{
+    display: flex;
+}
+.calc_display,
+.calc_keypad,
+.calc_keys--digits,
+.calc_keys--extra,
+.calc_keys--operators,
+.calc_keys--operators{
+    justify-content: space-between;
+} 
+.calc_body,
+.calc_keys--digits,
+.calc_keys--operators,
+.calc_keys--operators,
+.extra_button,
+.digit_button,
+.operator_button{
+    align-items:center;
+}
+.calc_body,
+.calc_display,
+.calc_keys--operators{
+    flex-direction: column;
+}
+.calc_body{
+    border-radius:15px;
+    padding: 4rem 3rem;
+    width:33%;
+    margin:auto;
+    background:#f2f2f2;
+    box-shadow: 1px 5px 15px 2px rgba(154, 161, 169, 0.957);
+}
+.calc_display{
+    width: 95%;
+    height: 110px;
+    box-shadow: 1px 1px 10px 2px rgba(185, 197, 212, 0.957);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1.6rem;
+}
+.calc_display--problem{
+    padding: 1rem 0 0 1rem;
+}
+.calc_display--answer{
+    font-size: 4rem;
+    align-self:flex-end;
+}
+.calc_keys--extra.top{
+    padding: 20px 20px 0;
+}
+.calc_keys--extra.bottom{
+    padding: 0 20px;
+}
+.calc_keys--digits{
+    padding: 20px;
+    gap:15px;
+    flex-wrap: wrap;
+}
+.calc_keys--operators{
+    padding: 20px 15px 0 10px ;
+}
+.calc_keys{
+    width: 100%;
+}
+.extra_button,
+.digit_button,
+.operator_button{
+    justify-content: center;
+    width:60px;
+    height:60px;
+    box-shadow: 1px 1px 5px 1px #b9c5d4;
+    border-radius: 50%;
+}
+.extra_button,
+.operator_button{
+    color: #f2f2f2;
+}
+.digit_button{
+    color:#4060bf
+}
+.digit_button.zero{
+    width: 160px;
+    border-radius: 30px;
+}
+.extra_button.negate,
+.extra_button.percentage{
+    background: rgb(51, 153, 255);
+    box-shadow:inset 0px 0px 10px 1px rgb(20, 111, 202);  
+}
+.extra_button.clear{
+    background: rgb(245, 22, 22);
+    box-shadow:inset 0px 0px 10px 1px #b01414;
+}
+.operator_button{
+    background: rgb(13, 70, 89);
+    box-shadow:inset 0px 0px 10px 1px rgb(7, 48, 61);
+}
+

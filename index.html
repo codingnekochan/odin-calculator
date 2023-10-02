@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Calc-a-thon</title>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <!-- <h1>Calculator</h1> -->
     <div class="calc_body">
-        <div class="calc_display"></div>
-        <div class="calc_keys">
-            <div class="calc_keys--extra">
-                <p id="clear" class="extra_button clear">C</p>
-                <p id="negate"  class="extra_button negate">+/-</p>
-                <p id="percentage"  class="extra_button percentage">%</p>
+        <div class="calc_display">
+            <p id="problem" class="calc_display--problem">8+6</p>
+            <p id="answer" class="calc_display--answer">123456789</p>
+        </div>
+        <div class="calc_keypad">
+            <div class="calc_keys">
+                <div class="calc_keys--extra top">
+                    <p id="clear" class="extra_button clear">C</p>
+                    <p id="negate"  class="extra_button negate">+/-</p>
+                    <p id="percentage"  class="extra_button percentage">%</p>
+                </div>
+                <div class="calc_keys--digits">
+                    <p id="digit7" class="digit_button seven">7</p>
+                    <p id="digit8" class="digit_button eight">8</p>
+                    <p id="digit9" class="digit_button nine">9</p>
+                    <p id="digit4" class="digit_button four">4</p>
+                    <p id="digit5" class="digit_button five">5</p>
+                    <p id="digit6" class="digit_button six">6</p>
+                    <p id="digit1" class="digit_button one">1</p>
+                    <p id="digit2" class="digit_button two">2</p>
+                    <p id="digit3" class="digit_button three">3</p>
+                </div>
+                <div class="calc_keys--extra bottom">
+                    <p id="digit0" class="digit_button zero">0</p>
+                    <p id="digit-decimal" class="digit_button decimal">.</p>
+                </div> 
             </div>
-            <div class="calc_keys--digits">
-                <p id="digit7" class="digit_button seven">7</p>
-                <p id="digit8" class="digit_button eight">8</p>
-                <p id="digit9" class="digit_button nine">9</p>
-                <p id="digit4" class="digit_button four">4</p>
-                <p id="digit5" class="digit_button five">5</p>
-                <p id="digit6" class="digit_button six">6</p>
-                <p id="digit1" class="digit_button one">1</p>
-                <p id="digit2" class="digit_button two">2</p>
-                <p id="digit3" class="digit_button three">3</p>
-            </div>
+            
             <div class="calc_keys--operators">
                 <p id="divide" class="operator_button divide">÷</p>
                 <p id="multiply" class="operator_button multiply">×</p>
@@ -37,11 +47,8 @@
                 <p id="add" class="operator_button add">+</p>
                 <p id="equal-to" class="operator_button equal-to">=</p>
             </div>
-            <div class="calc_keys--extra">
-                <p id="digit0" class="digit_button zero">0</p>
-                <p id="digit-decimal" class="digit_button decimal">.</p>
-            </div>   
         </div>
+       
     </div>
  <script src="./script.js"></script>   
 </body>
