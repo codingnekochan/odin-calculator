@@ -5,15 +5,19 @@
 }
 html{
     font-size: 62.5%;
-  }
+}
 body{
     width: 100%;
     min-height: 100vh;
     background: rgba(175, 184, 196, 0.67);
     position:relative;
+    padding: 15px;
+}
+p,
+button{
+    border: none;
     font-family: 'Orbitron', sans-serif;
     font-size: 2.4rem;
-    padding: 15px;
 }
 .calc_body,
 .calc_display,
@@ -51,7 +55,7 @@ body{
 .calc_body{
     border-radius:15px;
     padding: 4rem 3rem;
-    width:33%;
+    width:400px;
     margin:auto;
     background:#f2f2f2;
     box-shadow: 1px 5px 15px 2px rgba(154, 161, 169, 0.957);
@@ -84,7 +88,7 @@ body{
     flex-wrap: wrap;
 }
 .calc_keys--operators{
-    padding: 20px 15px 0 10px ;
+    padding: 20px 15px 0 5px ;
 }
 .calc_keys{
     width: 100%;
@@ -106,7 +110,7 @@ body{
     color:#4060bf
 }
 .digit_button.zero{
-    width: 160px;
+    width: 135px;
     border-radius: 30px;
 }
 .extra_button.negate,
