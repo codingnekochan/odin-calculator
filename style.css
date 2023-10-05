@@ -11,14 +11,17 @@ body{
     min-height: 100vh;
     background: rgba(175, 184, 196, 0.67);
     position:relative;
-    padding: 15px;
+    margin: auto;
 }
 p,
 button{
+    font-family: 'Orbitron', sans-serif;  
+}
+button{
     border: none;
-    font-family: 'Orbitron', sans-serif;
     font-size: 2.4rem;
 }
+body,
 .calc_body,
 .calc_display,
 .calc_keypad,
@@ -67,7 +70,7 @@ button{
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 10px;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 .calc_display--problem{
     padding: 1rem 0 0 1rem;
@@ -93,6 +96,7 @@ button{
 .calc_keys{
     width: 100%;
 }
+.equal-to,
 .extra_button,
 .digit_button,
 .operator_button{
@@ -102,6 +106,7 @@ button{
     box-shadow: 1px 1px 5px 1px #b9c5d4;
     border-radius: 50%;
 }
+.equal-to,
 .extra_button,
 .operator_button{
     color: #f2f2f2;
@@ -122,6 +127,7 @@ button{
     background: rgb(245, 22, 22);
     box-shadow:inset 0px 0px 10px 1px #b01414;
 }
+.equal-to,
 .operator_button{
     background: rgb(13, 70, 89);
     box-shadow:inset 0px 0px 10px 1px rgb(7, 48, 61);
