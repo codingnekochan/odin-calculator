@@ -119,7 +119,7 @@ body,
     border-radius: 30px;
 }
 .extra_button.negate,
-.extra_button.percentage{
+.operator_button.percentage{
     background: rgb(51, 153, 255);
     box-shadow:inset 0px 0px 10px 1px rgb(20, 111, 202);  
 }
