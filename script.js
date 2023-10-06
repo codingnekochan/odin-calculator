@@ -6,7 +6,7 @@
  const percentageButton = document.getElementById('percentage')
  const equalToButton = document.getElementById('equal-to');
  const clearButton = document.getElementById('clear');
- const signButton = document.getElementById('negate')
+ const signButton = document.getElementById('negate');
 // event listeners
 buttons.forEach(button => button.addEventListener('click', getInput)) ;
 numButtons.forEach( button => button.addEventListener('click', handleInputDisplay));
@@ -14,17 +14,16 @@ percentageButton.addEventListener('click',getPercentage);
 operatorButtons.forEach( button => button.addEventListener('click', handleInputDisplay));
 clearButton.addEventListener('click',clearAllDisplay);
 equalToButton.addEventListener('click',handleOutputDisplay);
-signButton.addEventListener('click', toggleSign)
+signButton.addEventListener('click', toggleSign);
 document.addEventListener('keypress', handleKeyboardPress);
-
 // variables
 let firstOperand, operator, secondOperand, result;
-let inputValues = ''
+let inputValues = '';
 let toggleEvent = false;
 // functions to handle operations
 function handleInputDisplay(e){ 
     const clickedButton = e.target
-    inputDisplay.textContent += (clickedButton.textContent);
+    inputDisplay.textContent += (clickedButton.textContent+ ' ');
 }
 function addition(a,b){
     return a + b;
@@ -41,10 +40,6 @@ function division(a,b){
 function percentage(a){
     return a / 100;
 }
-// handle decimal places
-function handleDecimal(a,b){
-        return parseFloat(`${a}.${b}`)
-}
 //functions to handle input and math evaluation
 function getPercentage(){
     result = percentage(firstOperand);
@@ -53,20 +48,18 @@ function getPercentage(){
     inputValues='';
     return firstOperand;
  }
-// function evaluateDecimal(){
-//    return result = handleDecimal(firstOperand, secondOperand);
-    
-// }
 function getInput(e){
     const clickedButton = e.target;
     inputValues += (clickedButton.textContent + '');
-    evaluateInput()
+    evaluateInput();
 }
 function evaluateInput(){
     // ensure input values are taken as strings
     let expression = inputValues.toString();
-    // split the input into array for evaluation
-    let tokens = expression.split(/([+-/÷%×.])/);
+    // Replace characters shown on ui with standard operators to make sure it works
+    expression = expression.replace(/÷/g, '/').replace(/×/g, '*');
+    // Split the input into an array for evaluation
+    let tokens = expression.split(/([+\-*/%])/); // Use standard operators in the regex
     firstOperand = parseFloat(tokens[0]);
     // to evaluate negative values
     if(toggleEvent){
@@ -76,11 +69,10 @@ function evaluateInput(){
     for (let i=1; i < tokens.length; i += 2){
         operator= `${tokens[i]}`;
         secondOperand = parseFloat(tokens[i+1]);
-
         operate(firstOperand,operator,secondOperand);
-        roundupResult()
-        outputDisplay.textContent = result;
+        roundupResult();
         firstOperand = result;
+        outputDisplay.textContent = result;
    }
    if (isNaN(result)){
         outputDisplay.textContent = '';
@@ -90,29 +82,22 @@ function evaluateInput(){
 }
 function operate(firstOperand, operator, secondOperand){
     switch(operator){
-        case '.':
-            // to handle decimal input
-            
-        break;
         case '+':
             return result = addition(firstOperand,secondOperand);
         break;
         case '-':
             return result = subtraction(firstOperand, secondOperand);   
         break; 
-        case '×':
+        case '*':
             return result = multiplication(firstOperand ,secondOperand);   
         break;
-        case '÷':
+        case '/':
             if( secondOperand === 0){
                 // error validation for division
                 return  result = "Math Error!"
              }else{
                 return result = division(firstOperand,secondOperand); 
             } 
-        break;
-        case '.':
-            return result = handleDecimal(firstOperand, secondOperand);
         break;
     }
     // error validation of incorrectly entered expressions
@@ -124,7 +109,7 @@ function roundupResult(){
     let precison = result.toString().length;
     // round answer to five figures
     if (precison >= 10){
-        return result = result.toFixed(5);
+       return result = parseFloat(result.toFixed(5)); 
     }else{
         return result;
     }
@@ -140,7 +125,6 @@ function clearinputDisplay(){
     inputValues= '';
     console.log('clearedddd')
 }
-
 function clearAllDisplay(){
     outputDisplay.textContent = '';
     clearinputDisplay()
@@ -156,8 +140,7 @@ function handleKeyboardPress(e) {
     //handle clear using delete key
     if (e.key === "Delete") {
         clearAllDisplay();
-    }
-   
+    }  
     // Check if any operator key matches the pressed key
         keys.forEach((key) => {
             if (e.key === "%"){
@@ -174,10 +157,9 @@ function handleKeyboardPress(e) {
 function toggleSign() {
     // Check if the firstOperand has a value
     if (typeof firstOperand === "number") {
-        firstOperand = -firstOperand; 
+        firstOperand = -firstOperand;
     }
     toggleEvent = true;
     inputDisplay.textContent = firstOperand;
 }
-
 clearAllDisplay()
