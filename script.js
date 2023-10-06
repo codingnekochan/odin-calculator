@@ -116,9 +116,12 @@ function roundupResult(){
 }
 // function to handle output 
 function handleOutputDisplay(){
-    clearinputDisplay()
+    clearinputDisplay();
     outputDisplay.textContent = result;
+    inputDisplay.textContent += result;
+    inputValues += result;
 }
+   
 // function to clear displays and array
 function clearinputDisplay(){
     inputDisplay.textContent = '';
